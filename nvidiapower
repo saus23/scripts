@@ -1,0 +1,8 @@
+#!/bin/sh
+
+nvidia-settings -a '[gpu:0]/GPUPowerMizerMode=1'
+nvidia-settings -a '[gpu:0]/GPUGraphicsClockOffset[4]=100'
+nvidia-settings -a '[gpu:0]/GPUMemoryTransferRateOffset[4]=750'
+sudo nvidia-smi -pm 1
+sudo nvidia-smi -pl 365
+sudo nvidia-smi -lgc=2045,2100

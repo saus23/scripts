@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo 3 > /tmp/libinput_discrete_deltay_multiplier

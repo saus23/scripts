@@ -1,0 +1,13 @@
+# Pacman Cache Cleaning Hook
+
+[Trigger]
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Pacman Cache Cleaning Hook
+When = PostTransaction
+Exec = /home/saus/.config/scripts/pkgcache
+Depends = pacman-contrib

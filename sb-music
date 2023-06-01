@@ -1,0 +1,19 @@
+#!/bin/sh
+
+filter() { cmus | sed "/^volume:/d;s/\\&/&amp;/g;s/\\[paused\\].*/⏸/g;/\\[playing\\].*/d;/^ERROR/Q" | paste -sd ' ' -;}
+
+pidof -x sb-mpdup >/dev/null 2>&1 || sb-mpdup >/dev/null 2>&1 &
+
+case $BLOCK_BUTTON in
+	1) cmus status | filter ; setsid -f "$TERMINAL" -e cmus ;;  # right click, pause/unpause
+	2) cmus toggle | filter ;;  # right click, pause/unpause
+	3) cmus status | filter ; notify-send "🎵 Music module" "\- Shows cmus song playing.
+- ⏸ when paused.
+- Left click opens cmus.
+- Middle click pauses.
+- Scroll changes track.";;  # right click, pause/unpause
+	4) cmus prev   | filter ;;  # scroll up, previous
+	5) cmus next   | filter ;;  # scroll down, next
+	6) cmus status | filter ; "$TERMINAL" -e "$EDITOR" "$0" ;;
+	*) cmus status | filter ;;
+esac
