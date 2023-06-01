@@ -1,3 +1,0 @@
-#!/bin/sh
-
-rm -rf ~/.local/share/gvfs-metadata/* >/dev/null 2>&1
