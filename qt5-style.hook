@@ -1,0 +1,11 @@
+# qt5-styleplugins rebuild
+
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = qt5-base
+
+[Action]
+Description = rebuild qt5-styleplugins
+When = PostTransaction
+Exec = /usr/bin/yay -S qt5-styleplugins --answerclean All --answerdiff None
