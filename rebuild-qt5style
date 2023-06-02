@@ -1,3 +1,0 @@
-#!/bin/sh
-
-/usr/bin/yay -S qt5-styleplugins --answerclean All --answerdiff None
