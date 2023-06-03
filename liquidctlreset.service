@@ -1,0 +1,10 @@
+[Unit]
+Description=Restart of liquidctl.service after suspend
+After=hibernate.target suspend.target
+
+[Service]
+Type=simple
+ExecStart=systemctl restart liquidctl.service
+
+[Install]
+WantedBy=hibernate.target suspend.target

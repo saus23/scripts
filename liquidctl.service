@@ -1,0 +1,12 @@
+[Unit]
+Description=AIO startup service
+Requires=dev-hydro115i.device
+After=dev-hydro115i.device
+
+[Service]
+Type=oneshot
+ExecStart=liquidctl initialize all
+ExecStart=liquidctl --match Hydro set fan speed 25 60 30 85 35 100
+
+[Install]
+WantedBy=default.target

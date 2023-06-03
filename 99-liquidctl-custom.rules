@@ -1,0 +1,5 @@
+# /etc/udev/rules.d/99-liquidctl-custom.rules
+# Example udev rules to create device units for some specific liquidctl devices.
+
+# create a dev-hydro115i.device for liquidctl to start after
+ACTION=="add", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1b1c", ATTRS{idProduct}=="0c21", SYMLINK+="hydro115i", TAG+="systemd"
