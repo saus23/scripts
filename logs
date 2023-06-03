@@ -1,9 +1,6 @@
 #!/bin/sh
 
-sudo rm /var/log/suricata/alert-debug.log
-sudo rm /var/log/suricata/fast.log
-sudo rm /var/log/suricata/stats.log
-sudo rm /var/log/suricata/suricata.log
+sudo rm /var/log/suricata/*
 
 sudo touch /var/log/suricata/alert-debug.log
 sudo touch /var/log/suricata/fast.log
