@@ -1,0 +1,7 @@
+#!/bin/sh
+
+input=$1
+output=$(echo $input | sed 's/.cpp//')
+
+g++ $input -o $output && ./$output
+rm $output

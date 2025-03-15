@@ -1,0 +1,20 @@
+#!/bin/bash
+
+input=$1
+width=$2
+height=$3
+x=$4
+y=$5
+outname="${input%.*}.cropped"
+outtext="${input##*.}"
+
+while [[ -e "${outname}-${i}.${outtext}" ]]
+do
+	let i++
+done
+
+out="${outname}-${i}.${outtext}"
+
+ffmpeg -i $input -filter:v crop=$width:$height:$x:$y -c:a copy -crf 18 $out
+
+exit

@@ -3,15 +3,10 @@
 # Clean cache upgrade/uninstall at PostTransaction
 # Hook starts here
 
-yay_running_on_behalf=saus
-yay_cache_dir="/home/$yay_running_on_behalf/.cache/yay/"
-
-pkg_cache_dir="$(find $yay_cache_dir -mindepth 1 -maxdepth 1 -type d | xargs -r printf "-c %s ")"
-
 echo "Removing cached packages"
-/usr/bin/paccache -rk 0
-/usr/bin/paccache -rk 0 $pkg_cache_dir
+/usr/bin/paccache -rk 2
 
 echo "Removing uninstalled package cache"
 /usr/bin/paccache -ruk 0
-/usr/bin/paccache -ruk 0 $pkg_cache_dir
+
+exit

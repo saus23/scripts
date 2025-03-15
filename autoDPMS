@@ -1,0 +1,14 @@
+#!/bin/sh
+
+while true; do
+	if grep -q RUNNING /proc/asound/card*/pcm*/sub*/status; then
+		if xset q | grep "Enabled"; then
+			xset s off -dpms
+		fi
+	else
+		if xset q | grep "Disabled"; then
+			xset s on +dpms
+		fi
+fi
+sleep 20
+done

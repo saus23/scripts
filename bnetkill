@@ -1,5 +1,0 @@
-#!/bin/sh
-
-killall winedevice.exe Battle.net.exe Agent.exe
-sxhkd &
-exit
