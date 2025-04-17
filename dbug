@@ -1,6 +1,8 @@
 #!/bin/sh
 
 input=$1
-output=a.out
+output=$(echo "$input" | sed 's/.cpp/.out/g')
 
-g++ -g $input -o $output && nvim $input
+g++ -g "$input" -o "$output" && nvim "$input"
+
+exit
