@@ -9,5 +9,5 @@ Target = *
 [Action]
 Description = Pacman Cache Cleaning Hook
 When = PostTransaction
-Exec = /home/saus/.config/scripts/pkgcache
+Exec = $HOME/.config/scripts/pkgcache
 Depends = pacman-contrib
